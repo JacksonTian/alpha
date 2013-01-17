@@ -8,4 +8,8 @@ app.use('/wechat', wechat.connect(config.token, function (req, res, next) {
   res.writeHead(200);
   res.end(wechat.reply({toUsername: 'diaosi', fromUsername: 'nvshen', msgType: 'text', content: '测试中'}));
 }));
+app.use('/', function () {
+  res.writeHead(200);
+  res.end('hello node api');
+});
 app.listen(80);
