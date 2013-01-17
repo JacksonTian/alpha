@@ -1,0 +1,21 @@
+{
+  "name": "node-api",
+  "main": "./app.js",
+  "customHost": "api.cnodejs.net",
+  "version": "0.0.1",
+  "description": "node-api",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JacksonTian/node-api.git"
+  },
+  "dependencies": {
+    "connect": "*",
+    "wechat": "*"
+  },
+  "author": "Jackson Tian",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}
