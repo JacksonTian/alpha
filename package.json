@@ -1,6 +1,6 @@
 {
   "name": "alpha",
-  "main": "./app.js",
+  "main": "index.js",
   "version": "0.0.1",
   "description": "node-api",
   "scripts": {
