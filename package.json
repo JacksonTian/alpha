@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "node-api": "./bin/node-api"
+    "alpha": "./bin/alpha"
   },
   "repository": {
     "type": "git",
