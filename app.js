@@ -1,14 +1,28 @@
 var connect = require('connect');
 var wechat = require('wechat');
 var config = require('./config');
+var index = require('./index');
 
 var app = connect();
 app.use(connect.query());
-app.use('/wechat', wechat.connect(config.token, function (req, res, next) {
-  res.reply({msgType: 'text', content: '测试中'});
+app.use('/wechat', wechat(config.token, function (req, res, next) {
+  var data = index.search(req.weixin.Content);
+  var content = '';
+  switch (data.status) {
+    case 'MATCHED':
+      content = data.status;
+    break;
+    case 'UNMATCHED':
+    default:
+    break;
+  }
+  content = data.status;
+  res.reply({msgType: 'text', content: content});
 }));
 app.use('/', function (req, res) {
   res.writeHead(200);
   res.end('hello node api');
 });
-app.listen(80);
+
+var port = process.env.VCAP_APP_PORT || 3000;
+app.listen(port);
