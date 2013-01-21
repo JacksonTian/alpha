@@ -1,7 +1,7 @@
 {
   "name": "alpha",
   "main": "index.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "node-api",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,12 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/JacksonTian/node-api.git"
+    "url": "git://github.com/JacksonTian/alpha.git"
   },
   "dependencies": {
-    "underscore": "*",
-    "connect": "*",
-    "wechat": "*"
+    "underscore": "*"
   },
   "author": "Jackson Tian",
   "license": "MIT",

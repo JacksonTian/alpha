@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-var api = require('../index');
+var api = require('../');
 
 console.log(api.search(process.argv[2]));
