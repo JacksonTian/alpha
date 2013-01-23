@@ -2,4 +2,32 @@
 
 var api = require('../');
 
-console.log(api.search(process.argv[2]));
+var data = api.search(process.argv[2]);
+var content = '';
+switch (data.status) {
+  case 'TOO_MATCHED':
+    content = '找到API过多，请精确一点：\n' + data.result.join(', ').substring(0, 100) + '...';
+    break;
+  case 'MATCHED':
+    content = data.result.map(function (item) {
+      var replaced = (item.desc || '')
+        .replace(/<p>/ig, '').replace(/<\/p>/ig, '')
+        .replace(/<code>/ig, '').replace(/<\/code>/ig, '')
+        .replace(/<pre>/ig, '').replace(/<\/pre>/ig, '')
+        .replace(/<strong>/ig, '').replace(/<\/strong>/ig, '')
+        .replace(/<ul>/ig, '').replace(/<\/ul>/ig, '')
+        .replace(/<li>/ig, '').replace(/<\/li>/ig, '')
+        .replace(/<em>/ig, '').replace(/<\/em>/ig, '')
+        .replace(/&#39;/ig, "'");
+      return item.path + '\n' + item.textRaw + ':\n' + replaced;
+    }).join('\n');
+    if (data.more && data.more.length) {
+      content += '\n更多相关API：\n' + data.more.join(', ').substring(0, 200) + '...';
+    }
+    break;
+  default:
+    content = '没有找到“' + input + '”相关API。输入模块名，方法名，事件名等都能获取到相关内容。';
+    break;
+}
+
+console.log(content);
