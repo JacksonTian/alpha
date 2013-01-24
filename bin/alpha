@@ -2,7 +2,8 @@
 
 var api = require('../');
 
-var data = api.search(process.argv[2]);
+var input = process.argv[2];
+var data = api.search(input);
 var content = '';
 switch (data.status) {
   case 'TOO_MATCHED':
