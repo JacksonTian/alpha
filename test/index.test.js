@@ -7,7 +7,7 @@ describe('index', function () {
       result.status.should.be.equal('MATCHED');
       result.result.should.have.length(4);
       result.should.have.property('more');
-      result.more.should.have.length(2);
+      result.more.should.have.length(6);
       result.result.forEach(function (item) {
         item.should.have.property('textRaw');
         item.should.have.property('name', 'module');
@@ -17,7 +17,7 @@ describe('index', function () {
       });
     });
 
-    it('should ok', function () {
+    it('should UNMATCHED', function () {
       var result = api.search('hehe');
       result.status.should.be.equal('UNMATCHED');
       result.result.should.have.length(0);
