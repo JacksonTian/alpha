@@ -5,6 +5,7 @@ var api = require('../');
 var input = process.argv[2];
 var data = api.search(input);
 var content = '';
+
 switch (data.status) {
   case 'TOO_MATCHED':
     content = '找到API过多，请精确一点：\n' + data.result.join(', ').substring(0, 100) + '...';
