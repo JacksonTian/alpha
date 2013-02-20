@@ -23,6 +23,22 @@ describe('index', function () {
       result.result.should.have.length(0);
       result.should.not.have.property('more');
     });
+
+    it('should not throw', function () {
+      (function(){
+        var result = api.search('/:8-)');
+        result.status.should.be.equal('UNMATCHED');
+        result.result.should.have.length(0);
+        result.should.not.have.property('more');
+      }).should.not.throw();
+
+      (function(){
+        var result = api.search('/');
+        result.status.should.be.equal('UNMATCHED');
+        result.result.should.have.length(0);
+        result.should.not.have.property('more');
+      }).should.not.throw();
+    });
   });
 });
 
