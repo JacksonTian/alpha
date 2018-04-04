@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-var api = require('../');
+const api = require('../');
 
-var input = process.argv[2];
-var data = api.search(input);
+const [ input ] = process.argv.slice(2);
+const data = api.search(input);
 var content = '';
 
 switch (data.status) {

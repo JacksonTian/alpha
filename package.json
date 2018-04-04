@@ -1,10 +1,10 @@
 {
   "name": "alpha",
-  "main": "index.js",
+  "main": "lib/index.js",
   "version": "0.0.9",
   "description": "Node API doc search",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R spec"
+    "test": "mocha -R spec"
   },
   "bin": {
     "alpha": "./bin/alpha"
