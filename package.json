@@ -1,7 +1,7 @@
 {
   "name": "alpha",
   "main": "lib/index.js",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "Node API doc search",
   "scripts": {
     "test": "mocha -R spec"
@@ -12,9 +12,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/JacksonTian/alpha.git"
-  },
-  "dependencies": {
-    "underscore": "1.4.3"
   },
   "devDependencies": {
     "mocha": "*",
